@@ -2,7 +2,6 @@
   --bg: #08111f;
   --bg-soft: #0d1728;
   --card: rgba(255, 255, 255, 0.04);
-  --card-strong: rgba(255, 255, 255, 0.06);
   --text: #ecf2ff;
   --muted: #aab7d3;
   --line: rgba(255, 255, 255, 0.09);
@@ -84,7 +83,7 @@ img {
 .nav-links a {
   color: var(--muted);
   font-size: 0.95rem;
-  transition: color 0.2s ease, opacity 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
@@ -134,7 +133,7 @@ img {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.28fr 0.92fr;
+  grid-template-columns: 1.25fr 0.95fr;
   gap: 28px;
   align-items: stretch;
 }
@@ -161,18 +160,19 @@ img {
   margin-bottom: 18px;
   padding: 9px 15px;
   border-radius: 999px;
-  font-size: 0.9rem;
+  font-size: 0.86rem;
   color: var(--accent);
   background: rgba(103, 232, 249, 0.08);
   border: 1px solid rgba(103, 232, 249, 0.18);
 }
 
 h1 {
-  margin: 0 0 14px;
-  font-size: clamp(2.4rem, 5.4vw, 4.7rem);
-  line-height: 1.02;
+  margin: 0 0 16px;
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  line-height: 1.05;
   letter-spacing: -0.05em;
-  max-width: 12ch;
+  max-width: 13ch;
+  text-wrap: balance;
 }
 
 .hero-text {
@@ -243,13 +243,15 @@ h1 {
 }
 
 .profile-photo {
-  width: 126px;
-  height: 126px;
+  width: 132px;
+  height: 132px;
   object-fit: cover;
+  object-position: center;
   border-radius: 50%;
   border: 3px solid rgba(103, 232, 249, 0.45);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
   margin-bottom: 18px;
+  background: #0d1728;
 }
 
 .hero-side h3,
@@ -383,6 +385,13 @@ h1 {
   color: var(--muted);
 }
 
+.timeline-org {
+  margin: 0 0 8px;
+  color: #d9e7ff;
+  font-weight: 600;
+  font-size: 0.96rem;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -499,6 +508,10 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  h1 {
+    max-width: 100%;
+  }
+
   .section-note {
     text-align: left;
   }
@@ -512,4 +525,26 @@ h1 {
   }
 
   .hero {
-    padding-top: 
+    padding-top: 48px;
+  }
+
+  .hero-card,
+  .hero-side,
+  .panel,
+  .project-card,
+  .timeline-item,
+  .contact-card {
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.08;
+  }
+
+  .hero-metrics,
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+}
